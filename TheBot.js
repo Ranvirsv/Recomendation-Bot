@@ -1,10 +1,17 @@
 const Discord = require("discord.js");
+// install discord.js using the command: npm install discord.js
+// NOTE: discord.js only works with latest node.js, so be sure to update node.js
+// or download it if you haven't already.
 
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 
 const axios = require('axios').default;
+// you need to install axios first
+// use the command npm install axios in the terminal
 
-client.login("OTA1NjE0OTM2NjY1OTE1NDMy.YYMpog.QWWVpaOpIV6UInXKeeu5KcpRlO8");
+client.login(process.env.TOKEN);
+// you need to put your discord bot token in the env file
+// or just plase the token in the cliennt.login("...") as a string
 
 client.on('ready', () => {
     console.log('Hello There!')
