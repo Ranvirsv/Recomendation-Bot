@@ -53,7 +53,9 @@ client.on('messageCreate', (msg) => {
     }
     else if(command[0] === 'rec'){
 
-        axios.get(`https://imdb-api.com/en/API/Keyword/k_eggvdssr/${command[1]}`)
+        // make a free account on imdb api and get the api key
+        // then put the key in the env file and use it.
+        axios.get(`https://imdb-api.com/en/API/Keyword/${process.env.APIKEY}/${command[1]}`)
         // gets the all the media form the imdb data base, i.e movies or series, with that specific keyword
         // the keywords are not genres so you can not use horror, comedy, romance etc.
         // the keywords can be love, scary, ghost, dramas etc.
@@ -89,7 +91,7 @@ client.on('messageCreate', (msg) => {
         });
     }
     else if(command[0] === 'rec250'){
-        axios.get(`https://imdb-api.com/en/API/Top250${command[1]}/k_eggvdssr`)
+        axios.get(`https://imdb-api.com/en/API/Top250${command[1]}/${process.env.APIKEY}`)
         // gets the specific media form the imdb data base, i.e movies or series.
         .then((res) => {
             const index = Math.floor(Math.random() * res.data.items.length)
