@@ -1,2 +1,2 @@
-# projects
-all of my projects
+# Recomendation bot
+JavaScript Movies and Shows recomnedation bot
